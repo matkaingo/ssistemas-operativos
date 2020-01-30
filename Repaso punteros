@@ -1,0 +1,24 @@
+&arr --> direccion del arreglo, y es de tipo int (*)[5]  //Direccion de arreglos de 5 enteros
+entonces  *(&arr) --> es tipo int[5] ó int*
+
+arr--> nombre del arreglo--> *arr es el contenido del primer elemento del arreglo
+
+
+arr[5] = {1,2,3,4,5}
+int *p = arr   //puntero que almacena la direccion de arr
+
+printf("%d",*arr); //imprime 1, el contenido de la primera direccion del arreglo
+
+printf("%p", p); //Debe mostrar la direccion del primer elmentoo del arrreglo
+
+int (*p2)[5] = &arr  //puntero que guarda direcciones de arreglos de 5 enteros
+
+printf("%p", *(&arr));  //imprime la ireccion del arreglodirecciones del arreglo
+
+printf("%p", *p2); //es lo miesmo que *(&arr)
+
+&arr +1 --> direccion del siguiente arreglo
+
+tipo int[5] equivalente a int*
+
+(*p) +1 --> direccon del segundo elemento del arreglo
