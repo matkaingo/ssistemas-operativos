@@ -1,0 +1,12 @@
+Se ven las estructuras las cuales son practicamente clases
+
+ejemplo:
+  struct point{
+      int x;
+      int y;
+    }
+    
+    Se instancia asi asi: struct point pt1;
+    
+    
+Se ven archivos(fopen,fgetc,fclose)    
