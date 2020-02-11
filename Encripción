@@ -1,0 +1,59 @@
+/*
+ ============================================================================
+ Name        : work.c
+ Author      : Mateo
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdlib.h>
+
+#include <stdio.h>
+
+ int main (void){
+
+	 char file[FILENAME_MAX], encriprtado[FILENAME_MAX];
+     char Caracter,funcion;
+
+     FILE *entrada, *salida;
+
+     printf("Introduzca el nombre del archivo de entrada:");
+     	 scanf("%s",file);
+     
+     printf("Introduzca la funcion:");
+     	 scanf("%s",funcion);
+    
+     
+     
+     printf("Introduzca el nombre del archivo de salida:");
+          scanf("%s",file);
+     
+       
+     if((entrada = fopen(file,"r"))==NULL){
+    	 printf("No se puedo leer el archivo %s", file);
+     }else{
+    	 printf("Se puedo leer el archivo %s", file);
+     }
+     
+     
+     if(funcion=="alpha"){
+				 while((Caracter= fgetc(entrada)) !=EOF){
+					 
+					 fputc("xor",salida);
+				 }
+          	 }
+     
+     else if(funcion=="charlie"){
+              	 
+               }
+     
+     else if(funcion=="bravo"){
+              	 
+               }else{
+            	   printf("No se ha encontrado ", file);
+               }
+
+     return 0;
+ }
