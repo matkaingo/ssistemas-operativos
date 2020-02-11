@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void){
+   
+   char original[FILENAME_MAX], encriptado[FILENAME_MAX];
+   char c, clave;
+   FILE *entrada, *salida;
+   unsigned temp;
+   
+   puts("Introduzca el nombre del archivo original:");
+   scanf("%s", original);
+   
+   puts("Nombre del archivo encriptado:");
+   scanf("%s", encriptado);
+   
+   puts("Introduzca la clave (0-255)");
+   scanf("%u", &temp);
+   clave = temp & 0xFFU;
+   
+   if((entrada = fopen(original, "rb")) == NULL){
+      printf("Error al tratar de leer el archivo %s", original);
+      return EXIT_FAILURE;
+   }else if ((salida = fopen(encriptado, "wb")) == NULL){
+      printf("Error al tratar de leer el archivo %s", encriptado);
+      return EXIT_FAILURE;
+   }
+   
+   while ((c = getc(entrada)) != EOF)
+      putc((c ^ clave) & 0xFF, salida);
+   
+   fclose(salida);
+   fclose(entrada);
+
+ 
